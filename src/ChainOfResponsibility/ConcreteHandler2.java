@@ -1,0 +1,20 @@
+package ChainOfResponsibility;
+
+public class ConcreteHandler2 implements Handler {
+
+    Handler successor;
+    @Override
+    public void setNext(Handler handler) {
+        this.successor = handler;
+    }
+
+    @Override
+    public void handleRequest(String request) {
+        if (request.equals("R2")) {
+            System.out.println("Handling request R1 in ConcreteHandler1");
+        } else {
+            System.out.println("ConcreteHandler2 doesn't handle this request");
+            successor.handleRequest(request);
+        }
+    }
+}
