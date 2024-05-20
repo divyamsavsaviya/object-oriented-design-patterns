@@ -1,6 +1,6 @@
 package State;
 
-public interface ATMState {
+public interface  ATMState {
     void insertCard();
     void ejectCard();
     void insertPin(int pinEntered);
